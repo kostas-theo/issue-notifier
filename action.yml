@@ -1,0 +1,38 @@
+name: 'Github Issue Notifier'
+description: 'Creates a github action to watch for issue reactions and notify'
+author: 'kostas-theo'
+inputs: 
+  notify_enabled:
+    description: 'boolean variable to enable notifications'
+    required: true
+    default: false
+  notify_upvotes:
+    description: 'number of issues to notify on'
+    required: false
+    default: 10
+  notify_address:
+    description: 'email address to send notification to is notify is enabled'
+    required: false
+    default: 10
+  notify_item_name:
+    description: 'Type of issue eg. suggestion, recommendation, feature request, prize etc. (used in notifation and summary table)'
+    required: false
+    default: 'issue'
+  notify_email_logo:
+    description: 'URL to logo to be used in email notification header'
+    required: false
+  smtp_user:
+    description: 'email address of the SMTP user to send the email FROM'
+    required: false
+  smtp_password:
+    description: 'SMTP password of the SMTP_USER'
+    required: false
+  smtp_endpoint:
+    description: 'SMTP endpoint'
+    required: false
+  smtp_port:
+    description: 'SMTP port number'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
